@@ -7,6 +7,7 @@
 
 var through = require('through2');
 var instyle = require('instyle');
+var path = require('path');
 
 module.exports = function (options) {
     return through.obj(function (file, enc, callback) {
@@ -15,6 +16,7 @@ module.exports = function (options) {
         }
         var contents = file.contents.toString();
         file.contents = new Buffer(instyle(contents), "binary");
+        file.path = path.join(path.dirname(file.path), path.basename(file.path, '.css') + '.js');
         callback(null, file);
     })
 };

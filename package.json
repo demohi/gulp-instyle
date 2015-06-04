@@ -1,6 +1,6 @@
 {
   "name": "gulp-instyle",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "instyle gulp plugin",
   "main": "index.js",
   "scripts": {
